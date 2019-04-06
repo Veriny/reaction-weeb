@@ -4,7 +4,7 @@ direct = "/home/ubuntu/rxn-weeb-res/"
 file = open(direct + "token2.txt", 'r')
 BOT_TOKEN = file.readline()
 file.close()
-
+print(BOT_TOKEN)
 Bot = commands.Bot(command_prefix = "!")
 
 extensions = ['reactions', 'yntk']

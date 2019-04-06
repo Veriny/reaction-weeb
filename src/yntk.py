@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import random
 import json
-UNITS_ACTIVE = 2
+UNITS_ACTIVE = 3
 
 
 class yntk(commands.Cog):
