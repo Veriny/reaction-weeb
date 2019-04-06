@@ -48,5 +48,8 @@ class reactions(commands.Cog):
         embed = discord.Embed(colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_image(url="https://i.redd.it/zjhaurjckcq21.png")
         await ctx.send(embed=embed)
+    @commands.command()
+    async def invite(self, ctx):
+        await ctx.send("https://discordapp.com/oauth2/authorize?client_id=558016541514399744&scope=bot&permissions=8")
 def setup(bot):
     bot.add_cog(reactions())

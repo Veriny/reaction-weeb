@@ -1,7 +1,10 @@
 import discord
 from discord.ext import commands
+direct = "/home/ubuntu/rxn-weeb-res/"
+file = open(direct + "token2.txt", 'r')
+BOT_TOKEN = file.readline()
+file.close()
 
-TOKEN = 'NTU4MDE2NTQxNTE0Mzk5NzQ0.D3QtFA.ayPf8axbjvkpFPh2U-mFk0dQvRg'
 Bot = commands.Bot(command_prefix = "!")
 
 extensions = ['reactions', 'yntk']
@@ -30,4 +33,4 @@ async def reload(ctx, cogname):
 for ext in extensions:
     Bot.load_extension(ext)
 
-Bot.run(TOKEN)
+Bot.run(BOT_TOKEN)
