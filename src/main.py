@@ -20,7 +20,7 @@ async def load(ctx, cogname):
         await ctx.send("Loaded {}".format(cogname))
 
     except Exception as e:
-        await ctx.send("Unable to load that cog. '{}'".format(str(e)))
+        await ctx.send("Unable to load that cog. `{}`".format(str(e)))
 
 @Bot.command()
 async def reload(ctx, cogname):
@@ -28,7 +28,7 @@ async def reload(ctx, cogname):
         Bot.reload_extension(cogname)
         await ctx.send("Reloaded {}".format(cogname))
     except Exception as e:
-        await ctx.send("Unable to reload that cog. '{}'".format(str(e)))
+        await ctx.send("Unable to reload that cog. `{}`".format(str(e)))
 
 for ext in extensions:
     Bot.load_extension(ext)
