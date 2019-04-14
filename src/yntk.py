@@ -91,7 +91,7 @@ class yntk(commands.Cog):
     async def ranking(self, ctx):
         with open('/home/ubuntu/reaction_weeb-II/res/users.json', 'r') as f:
             users = json.load(f)
-        sorted_dict = sorted(users)
+        sorted_dict = sorted(users, key=itemgetter(1))
         print(sorted_dict)
         string = ""
         for user in sorted_dict:
@@ -110,6 +110,9 @@ def check(m):
 def calc_points_earned(date1, date2):
     return round(1/(max(date1, date2)-min(date1, date2)) * 100, 3)
 
+def calc_points_lost(date1, date2):
+    return (max(date1, date2)-min(date1, date2))
+
 async def correct_answer(ctx, date1, date2, users):
     update_data(ctx, users)
     earned_points = calc_points_earned(date1, date2)
@@ -125,7 +128,7 @@ async def correct_answer(ctx, date1, date2, users):
 
 async def wrong_answer(ctx, date1, date2, users):
     update_data(ctx, users)
-    earned_points = calc_points_earned(date1, date2)
+    earned_points = calc_points_lost(date1, date2)
     add_points(ctx, earned_points, False, users)
     total_points = get_points(ctx, users)
     streak = get_streak(ctx, users)
