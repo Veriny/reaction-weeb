@@ -85,7 +85,7 @@ class yntk(commands.Cog):
             users = json.load(f)
         points = get_points(ctx, users)
         streak = get_streak(ctx, users)
-        await ctx.send('RP: {points} | streak: {streak}')
+        await ctx.send('RP: {} | streak: {}'.format(points, streak))
 
 
 def setup(bot: commands.Bot):
@@ -95,7 +95,7 @@ def check(m):
     return m.content in ['1', '2', '3']
 
 def calc_points_earned(date1, date2):
-    return min(date1, date2)/max(date1, date2) * 100
+    return round(1/(max(date1, date2)-min(date1, date2)) * 100, 3)
 
 async def correct_answer(ctx, date1, date2, users):
     update_data(ctx, users)
