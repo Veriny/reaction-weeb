@@ -3,7 +3,7 @@ from discord.ext import commands
 import random
 import json
 from operator import itemgetter
-UNITS_ACTIVE = 4
+UNITS_ACTIVE = 5
 users_solving = []
 
 class yntk(commands.Cog):
@@ -46,7 +46,7 @@ class yntk(commands.Cog):
                               content2))
         msg = await self.bot.wait_for('message', check=check, timeout=60.0)
         content = msg.content
-        if (content == "1" or content == "2") and msg.author.id == ctx.message.author.id:
+        if (content == "1" or content == "2" or content == "3") and msg.author.id == ctx.message.author.id:
             if content == "1" and date1 < date2:
                 # The user got the question right.
                 users_solving.remove(ctx.message.author.id)
@@ -66,7 +66,7 @@ class yntk(commands.Cog):
             elif content == "3" and date2 == date1:
                 # User got it right
                 users_solving.remove(ctx.message.author.id)
-                await correct_answer(ctx, date1, date2, users)
+                await correct_answer(ctx, date1, date2 + 0.000000001, users)
                 with open('/home/ubuntu/reaction_weeb-II/res/users.json', 'w') as f:
                     json.dump(users, f)
                     print("Did this too!")
@@ -91,10 +91,10 @@ class yntk(commands.Cog):
     async def ranking(self, ctx):
         with open('/home/ubuntu/reaction_weeb-II/res/users.json', 'r') as f:
             users = json.load(f)
-        sorted_dict = sorted(users, key=itemgetter(1))
-        print(sorted_dict)
+        # sorted_dict = sorted(users.iteritems(), key=lambda (x, y): y['ranking_points'])
+        # print(sorted_dict)
         string = ""
-        for user in sorted_dict:
+        for user in sorted(users, key=lambda x: users[x]['ranking_points'], reverse = True):
             print(user)
             string = string + "<@!{}> **RP {}, streak {}**\n".format(user, users[user]['ranking_points'], users[user]['streak'])
         embed = discord.Embed(description = string, colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
