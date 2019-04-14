@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import random
 import json
+from operator import itemgetter
 UNITS_ACTIVE = 4
 users_solving = []
 
@@ -86,7 +87,19 @@ class yntk(commands.Cog):
         points = get_points(ctx, users)
         streak = get_streak(ctx, users)
         await ctx.send('RP: {} | streak: {}'.format(points, streak))
-
+    @commands.command()
+    async def ranking(self, ctx):
+        with open('/home/ubuntu/reaction_weeb-II/res/users.json', 'r') as f:
+            users = json.load(f)
+        sorted_dict = sorted(users)
+        print(sorted_dict)
+        string = ""
+        for user in sorted_dict:
+            print(user)
+            string = string + "<@!{}> **RP {}, streak {}**\n".format(user, users[user]['ranking_points'], users[user]['streak'])
+        embed = discord.Embed(description = string, colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+        embed.set_author(name="Top Historians")
+        await ctx.send(embed=embed)
 
 def setup(bot: commands.Bot):
     bot.add_cog(yntk(bot))
