@@ -195,88 +195,88 @@ def get_streak(ctx, users):
 async def process_info(ctx, users, user):
     ranking_points = users[str(user.id)]['ranking_points']
     streak = users[str(user.id)]['streak']
-    if ranking_points <= 100:
+    if ranking_points <= 300:
         embed = discord.Embed(description='**Historian title: Pupil**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena13.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 100 < ranking_points <= 150:
+    elif 300 < ranking_points <= 600:
         embed = discord.Embed(description='**Historian title: Newbie**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena14.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 150 < ranking_points <= 250:
+    elif 600 < ranking_points <= 900:
         embed = discord.Embed(description='**Historian title: Specialist**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena15.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 250 < ranking_points <= 300:
+    elif 900 < ranking_points <= 1200:
         embed = discord.Embed(description='**Historian title: Expert**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena16.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 300 < ranking_points <= 400:
+    elif 1200 < ranking_points <= 1500:
         embed = discord.Embed(description='**Historian title: Candidate Master**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena17.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 400 < ranking_points <= 450:
+    elif 1500 < ranking_points <= 1800:
         embed = discord.Embed(description='**Historian title: Master**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena18.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 450 < ranking_points <= 550:
+    elif 1800 < ranking_points <= 2100:
         embed = discord.Embed(description='**Historian title: Grandmaster**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena19.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 550 < ranking_points <= 600:
+    elif 2100 < ranking_points <= 2400:
         embed = discord.Embed(description='**Historian title: International Grandmaster**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena20.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 600 < ranking_points <= 650:
+    elif 2400 < ranking_points <= 2700:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/arenas/arena21.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
-    elif 650 < ranking_points <= 700:
+    elif 2700 < ranking_points <= 3000:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Bronze I]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/bronze-1/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 700 < ranking_points <= 750:
+    elif 3000 < ranking_points <= 3300:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Bronze II]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/bronze-2/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 750 < ranking_points <= 800:
+    elif 3300 < ranking_points <= 3600:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Bronze III]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/bronze-3/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 800 < ranking_points <= 850:
+    elif 3600 < ranking_points <= 3900:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Silver I]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/silver-1/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 850 < ranking_points <= 900:
+    elif 3900 < ranking_points <= 4200:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Silver II]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/silver-2/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 900 < ranking_points <= 950:
+    elif 4200 < ranking_points <= 4500:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Silver III]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/silver-3/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 950 < ranking_points <= 1000:
+    elif 4500 < ranking_points <= 4800:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Gold I]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/gold-1/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 1000 < ranking_points <= 1050:
+    elif 4800 < ranking_points <= 5100:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Gold II]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/gold-2/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 1050 < ranking_points <= 1100:
+    elif 5100 < ranking_points <= 5400:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Gold III]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/gold-3/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
         embed.set_footer(text = 'This person has reached Legendary Grandmaster.', icon_url='https://royaleapi.com/static/img/arenas/arena21.png')
-    elif 1050 < ranking_points <= 1100:
+    elif ranking_points > 5400:
         embed = discord.Embed(description='**Historian title: Legendary Grandmaster [Platinum]**\n**Ranking points: {}**\n**Streak: {}**'.format(ranking_points, streak), colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_thumbnail(url = 'https://royaleapi.com/static/img/badge/legendary/Cherry_Blossom_01.png')
         embed.set_author(name="{}'s stats".format(user.name), icon_url="{}".format(user.avatar_url))
