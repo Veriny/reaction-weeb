@@ -71,6 +71,15 @@ class reactions(commands.Cog):
             embed.set_image(url="https://i.redd.it/erp4cf8kact21.png")
         await ctx.send(embed=embed)
     @commands.command()
+    async def silence(self, ctx, member: discord.Member = None):
+        string = ""
+        if member is None:
+            embed = discord.Embed(description = "Tag a person to silence.",  colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+        else:
+            embed = discord.Embed(description = "<@!{}>, Ben Shapiro demands your silence.".format(member.id),  colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+            embed.set_image(url="https://i.redd.it/m7gl0a2ydkt21.gif")
+        await ctx.send(embed=embed)
+    @commands.command()
     async def invite(self, ctx):
         await ctx.send("https://discordapp.com/oauth2/authorize?client_id=558016541514399744&scope=bot&permissions=8")
 def setup(bot):
