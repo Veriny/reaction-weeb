@@ -19,11 +19,6 @@ class reactions(commands.Cog):
         embed.set_image(url="https://cdn.discordapp.com/attachments/400909034766467072/563090807478026250/joke.jpg")
         await ctx.send(embed=embed)
     @commands.command()
-    async def colglaziernut(self, ctx):
-        embed = discord.Embed(description="When you hit that \n corroboration just right", colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
-        embed.set_image(url="https://cdn.discordapp.com/attachments/400909034766467072/555403190292578305/unknown.png")
-        await ctx.send(embed=embed)
-    @commands.command()
     async def wtf(self, ctx):
         embed = discord.Embed(colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_image(url="https://i.redd.it/tgxodpn7qeh21.jpg")
