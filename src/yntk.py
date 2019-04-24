@@ -123,7 +123,7 @@ class yntk(commands.Cog):
             string = string + "<@!{}> **RP {}, streak {}**\n".format(user, users[user]['ranking_points'], users[user]['streak'])
         embed = discord.Embed(description = string, colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_author(name="Top Historians")
-        embed.set_thumbnail(url='https://cdn.discordapp.com/attachments/400909034766467072/555403190292578305/unknown.png')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/emojis/529472867805691904.gif')
         await ctx.send(embed=embed)
 
 def setup(bot: commands.Bot):
