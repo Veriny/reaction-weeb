@@ -3,7 +3,7 @@ from discord.ext import commands
 import random
 import json
 from operator import itemgetter
-UNITS_ACTIVE = 5
+UNITS_ACTIVE = 8
 users_solving = []
 
 class yntk(commands.Cog):
@@ -37,13 +37,20 @@ class yntk(commands.Cog):
         content2 = YNTKpool['{}'.format(secondYNTK)]['content']
         date1 = YNTKpool['{}'.format(firstYNTK)]['date']
         date2 = YNTKpool['{}'.format(secondYNTK)]['date']
-        await ctx.send("""Which came first?
-        1: {}
-                                        **OR**
-        2: {}?
-**__Respond with a number, 1 or 2. Respond with 3 if they happened at the same time.__**""".
-                       format(content1,
-                              content2))
+        embed = discord.Embed(description="**__Answer with a number, 1 or 2. If they happened in the same year, answer with 3.__**", colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+        embed.set_thumbnail(url = ctx.message.author.avatar_url)
+        embed.add_field(name = "------------------------------1------------------------------", value="{}".format(content1), inline=True)
+        embed.add_field(name = "------------------------------2------------------------------", value="{}".format(content2), inline=True)
+        embed.set_footer(text="If I'm not responding to anything, say `!reload yntk`")
+        embed.set_author(name="Which came first?", icon_url="https://i.imgur.com/7qttfnm.gif")
+        await ctx.send(embed=embed)
+#         await ctx.send("""Which came first?
+#         1: {}
+#                                         **OR**
+#         2: {}
+# **__Respond with a number, 1 or 2. Respond with 3 if they happened at the same time.__**""".
+#                        format(content1,
+#                               content2))
         msg = await self.bot.wait_for('message', check=check, timeout=60.0)
         content = msg.content
         if (content == "1" or content == "2" or content == "3") and msg.author.id == ctx.message.author.id:
