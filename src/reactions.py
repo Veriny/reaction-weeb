@@ -39,6 +39,16 @@ class reactions(commands.Cog):
         embed.set_image(url="https://i.redd.it/78ugmt18kcq21.png")
         await ctx.send(embed=embed)
     @commands.command()
+    async def nou(self, ctx):
+        embed = discord.Embed(colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+        embed.set_image(url="https://i.redd.it/bs73e7ibk1431.gif")
+        await ctx.send(embed=embed)
+    @commands.command()
+    async def no(self, ctx):
+        embed = discord.Embed(colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+        embed.set_image(url="https://cdn.discordapp.com/attachments/400909034766467072/577241058929410090/image0.jpg")
+        await ctx.send(embed=embed)
+    @commands.command()
     async def holdup(self, ctx):
         embed = discord.Embed(colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
         embed.set_image(url="https://i.redd.it/zjhaurjckcq21.png")
@@ -77,5 +87,10 @@ class reactions(commands.Cog):
     @commands.command()
     async def invite(self, ctx):
         await ctx.send("https://discordapp.com/oauth2/authorize?client_id=558016541514399744&scope=bot&permissions=8")
+    @commands.command()
+    async def yareyaredaze(self, ctx):
+        embed = discord.Embed(description="Oh? You're approaching me?",colour= discord.Color(random.randint(0x000000, 0xFFFFFF)))
+        embed.set_image(url="https://i.redd.it/dq0db04gic431.gif")
+        await ctx.send(embed=embed)
 def setup(bot):
     bot.add_cog(reactions())
